@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import <Cordova/CDVViewController.h>
 @interface ViewController ()
 
 @end
@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    CDVViewController* viewController = [CDVViewController new];
+    [self.view addSubview:viewController.view];
+    viewController.view.frame = CGRectMake(0, 0, 320, 480);
 }
 
 - (void)didReceiveMemoryWarning {
